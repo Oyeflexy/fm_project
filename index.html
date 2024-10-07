@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIGAR Online Shop</title>
+    <style>
+        .cart {
+            display: inline-block;
+            width: 2.2em;
+            height: 2.2em;
+            --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M17 18a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2M1 2h3.27l.94 2H20a1 1 0 0 1 1 1c0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1l-.9 1.63l-.03.12a.25.25 0 0 0 .25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1zm6 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2m9-7l2.78-5H6.14l2.36 5z'/%3E%3C/svg%3E");
+            background-color: currentColor;
+            color: grey;
+            -webkit-mask-image: var(--svg);
+            mask-image: var(--svg);
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+            }
+            .love {
+            display: inline-block;
+            width: 2.2em;
+            height: 2.2em;
+            --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='M15 7C8.925 7 4 11.925 4 18c0 11 13 21 20 23.326C31 39 44 29 44 18c0-6.075-4.925-11-11-11c-3.72 0-7.01 1.847-9 4.674A10.99 10.99 0 0 0 15 7m3 17h12m-6-6v12'/%3E%3C/svg%3E");
+            background-color: currentColor;
+            color: grey;
+            -webkit-mask-image: var(--svg);
+            mask-image: var(--svg);
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+            }
+            cart {
+            position: relative;
+            }
+            .cart {
+            position: absolute;
+            font-size: 20px;
+            top: 70px;
+            right: 100px;
+        
+            }
+            love {
+            position: relative;
+            }
+            .love {
+            position: absolute;
+            font-size: 20px;
+            top: 70px;
+            right: 220px;
+        
+            }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #fff;
+            padding: 5px 5px;
+            border-bottom: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .header-right {
+            display:contents;
+            gap: 20px;
+        }
+
+        .header-right a, 
+        .header-right select {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .header-right select {
+            padding: 5px;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .search-bar input {
+            width: 50%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #4CAF50;
+            padding: 10px;
+            
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+           
+        }
+        .home-cat {
+            margin-left: 20%;
+        }
+        #all-cat {
+            background-color: black;
+            color: white;
+            border: none;
+            /* padding-top: 20px;
+            padding-bottom: 20px; */
+        }
+
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            
+            /* hover needed */
+        }
+        
+        
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .main-banner {
+            width: 70%;
+            background-color: #e0f7fa;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .main-banner img {
+            width: 50%;
+        }
+
+        .main-banner h2 {
+            color: #4CAF50;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .main-banner p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .main-banner button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #new {
+            background-color: green;
+            width: 100%;
+        }
+
+        
+        .sidebar {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+       
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        
+    </style>
+</head>
+<body>
+
+    
+    <header>
+        <div class="header-container">
+            <div class="header-right">
+              <div class="england">
+                <p>England's Fastest Online Shopping Destination</p></div>
+                <div class="my-account">
+                <a href="#">My Account</a>
+                <select>
+                    <option>USD</option>
+                    <option>GBP</option>
+                    <option>NGN</option>
+                </select>
+                <select>
+                    <option>English</option>
+                    <option>Spanish</option>
+                </select>
+              </div>
+            </div>
+        </div>
+    </header>
+
+    
+    <div class="search-bar">
+      <div class="logo">CIGAR</div>
+        <input type="text" placeholder="Search entire store here...">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="love"></span>
+        <span class="cart"></span>
+        
+    </div>
+
+    
+    <nav>
+        <ul class="home-cat">
+            <select  id="all-cat">
+            <option><a href="#">All Categories</a></option>
+            </select>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    
+    <div class="main-content">
+        
+        <div class="main-banner">
+            <h2>Bag Full of Grocery Products</h2>
+            <p>Frozen & Chilled Food, Fresh Fruit & Vegetables</p>
+            <img src="./images/bag of grocery.jpg" alt="Bag full of groceries"><br>
+            <button>Shop Now</button>
+        </div>
+
+        
+        <div class="sidebar">
+            <img src="./images/1.jpg" alt="Super Sale 1">
+            <img src="./images/2.jpg" alt="Super Sale 2">
+            <img src="./images/3.jpg" alt="Super Sale 3">
+        </div>
+    </div>
+    
+    
+    <footer>
+        &copy; 2024 CIGAR Online Shopping. All rights reserved.
+    </footer>
+
+</body>
+</html>
